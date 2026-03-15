@@ -1,10 +1,14 @@
+import { FaGithub } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import logo from "../../assets/logo.png";
+import "./NavBar.css";
 
 const NavBar = () => {
   const links = (
     <>
-      <NavLink to="/">Home</NavLink>
+      <NavLink className="" to="/">
+        Home
+      </NavLink>
       <NavLink to="/apps">Apps</NavLink>
       <NavLink to="/installation">Installation</NavLink>
     </>
@@ -52,7 +56,10 @@ const NavBar = () => {
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">Button</a>
+            <a className="btn contribute-btn">
+              {" "}
+              <FaGithub /> Contribute
+            </a>
           </div>
         </div>
       </div>

@@ -1,0 +1,12 @@
+.gradient-text {
+  /* Apply the gradient as a background image */
+  background-image: linear-gradient(to bottom, darkblue, darkorchid);
+
+  /* Clip the background to the text shape */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the actual text transparent to reveal the background */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Standard property for transparency */
+}

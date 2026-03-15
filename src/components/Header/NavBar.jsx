@@ -1,4 +1,5 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
+import logo from "../../assets/logo.png";
 
 const NavBar = () => {
   const links = (
@@ -9,7 +10,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm px-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,7 +37,10 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">AppNexus.IO</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          <img className="w-6" src={logo} alt="" />
+          AppNexus.IO
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

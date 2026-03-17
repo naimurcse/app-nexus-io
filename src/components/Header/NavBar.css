@@ -10,7 +10,8 @@
 }
 
 a.active {
-  color: red;
+  color: #812ce2;
+  border-bottom: 3px solid #812ce2;
 }
 a.pending {
   color: blue;

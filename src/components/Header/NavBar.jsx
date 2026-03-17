@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <>
       <div className=" bg-base-100 shadow-sm">
-        <div className="navbar max-w-6xl mx-auto">
+        <div className="navbar max-w-7xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -53,7 +53,9 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{links}</ul>
+            <ul className="menu menu-horizontal px-1 text-xl gap-5 [&_a]:hover:text-[#812ce2] ">
+              {links}
+            </ul>
           </div>
           <div className="navbar-end">
             <a className="btn contribute-btn">

@@ -15,23 +15,22 @@ const AppDetails = () => {
     image,
     description,
     downloads,
-    id,
     ratingAvg,
     reviews,
-    size,
     title,
     ratings,
+    size,
     companyName,
   } = app;
 
   console.log(ratings);
   return (
     <div className="max-w-7xl mx-auto my-15">
-      <div className="flex gap-10 border-b-1 border-b-gray-300 pb-8">
-        <div>
-          <img className="h-60" src={image} alt="" />
-        </div>
+      <div className="flex items-stretch gap-10 border-b-1 border-b-gray-300 pb-8">
         <div className="flex-1">
+          <img className="h-full object-cover" src={image} alt="" />
+        </div>
+        <div className="flex-2">
           <h2 className="font-bold text-[32px]">{title}</h2>
           <p className="text-[20px] text-[#627382] border-b-1 border-b-gray-300 pb-3">
             Developed by{" "}
@@ -66,6 +65,10 @@ const AppDetails = () => {
               </p>
             </div>
           </div>
+          <button className="btn btn-success text-white font-normal mt-6">
+            {" "}
+            {`Install Now (${size} MB)`}
+          </button>
         </div>
       </div>
 

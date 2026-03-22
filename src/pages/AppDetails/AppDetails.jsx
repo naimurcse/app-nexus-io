@@ -3,6 +3,8 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingsIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
+import { formatCount } from "../../utilities/utilities";
+
 const AppDetails = () => {
   const { appId } = useParams();
   const appData = useLoaderData();
@@ -43,7 +45,7 @@ const AppDetails = () => {
               <img className="h-8" src={downloadIcon} alt="" />
               <p className="text-gray-500 mt-2">Download</p>
               <p className="text-[40px] font-extrabold text-[#001931]">
-                {downloads}
+                {formatCount(downloads)}
               </p>
             </div>
 
@@ -61,7 +63,7 @@ const AppDetails = () => {
               <img className="h-8" src={reviewIcon} alt="" />
               <p className="text-gray-500 mt-2">Total Reviews</p>
               <p className="text-[40px] font-extrabold text-[#001931]">
-                {reviews}
+                {formatCount(reviews)}
               </p>
             </div>
           </div>

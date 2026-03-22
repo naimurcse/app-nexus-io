@@ -1,6 +1,9 @@
+import { Link } from "react-router";
 import AppCard from "../../components/AppCard/AppCard";
 const TopApps = ({ apps }) => {
+  const topEight = apps.slice(0, 8);
   console.log(apps);
+  console.log(topEight);
   return (
     <div className="max-w-7xl mx-auto my-[80px]">
       <div className="text-center">
@@ -12,9 +15,18 @@ const TopApps = ({ apps }) => {
 
       {/* Apps will be shown here */}
       <div className="grid grid-cols-4 gap-4">
-        {apps.map((app) => (
+        {topEight.map((app) => (
           <AppCard key={app.id} app={app}></AppCard>
         ))}
+      </div>
+
+      {/* Show button */}
+      <div className="text-center mt-10">
+        <Link to="/apps">
+          <button className="gradient-btn px-8 py-3 rounded-lg text-lg ">
+            Show All
+          </button>
+        </Link>
       </div>
     </div>
   );

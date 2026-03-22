@@ -25,7 +25,7 @@
     "description": "PixelEdit Pro transforms your smartphone into a professional-grade photo editing studio. Powered by cutting-edge AI, it delivers features once reserved for desktop software — right in the palm of your hand. Instant background removal, sky replacement, and object erasing are just a tap away.\n\nDive deep into your creative vision with over 200 handcrafted color grading presets, fine-tuned HSL controls, and a powerful curves editor. Batch editing lets you apply your signature style across entire photo albums in seconds, saving hours of repetitive work.\n\nExport your masterpieces in full resolution with support for RAW, HEIC, and TIFF formats. Whether you're a social media creator, a professional photographer, or a hobbyist, PixelEdit Pro gives you the tools to make every shot extraordinary.",
     "size": 162.5,
     "reviews": 10200,
-    "ratingAvg": 4.5,
+    "ratingAvg": 2.5,
     "downloads": 1450000,
     "ratings": [
       { "name": "1 star", "count": 350 },
@@ -43,7 +43,7 @@
     "description": "Vortex VPN shields your digital life with military-grade AES-256 encryption, keeping your personal data safe from hackers, ISPs, and third-party trackers. With a strict no-logs policy, your online activity remains completely private — always.\n\nChoose from over 600 high-speed servers spread across 70+ countries. Whether you need to bypass geo-restrictions, access your favorite content while traveling, or simply browse with confidence on public Wi-Fi, Vortex delivers lightning-fast speeds without compromise.\n\nSetup takes less than 30 seconds, and the auto-connect feature ensures you're always protected the moment you go online. A built-in kill switch automatically cuts your connection if the VPN drops, so your IP is never accidentally exposed.",
     "size": 30.4,
     "reviews": 5800,
-    "ratingAvg": 4.4,
+    "ratingAvg": 1.4,
     "downloads": 950000,
     "ratings": [
       { "name": "1 star", "count": 180 },
@@ -217,7 +217,7 @@
   },
   {
     "id": 13,
-    "image": "https://images.unsplash.com/photo-1512070632764-16154c38244c?q=80&w=1000&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000&auto=format&fit=crop",
     "title": "CloudKeeper",
     "companyName": "Skyline Tech",
     "description": "CloudKeeper is the secure, intelligent home for all your important files. Every document, photo, and video you store is protected by zero-knowledge end-to-end encryption, meaning only you can ever access your data — not even Skyline Tech can see it.\n\nSmart folder organization with AI-powered tagging makes finding any file instant, while automatic versioning keeps a 90-day history of every document so you can roll back changes whenever needed. Offline access ensures critical files are always available, even without an internet connection.\n\nSeamlessly sync across all your devices — iOS, Android, Mac, Windows, and Linux — and share files or entire folders with customizable permissions. For teams, CloudKeeper offers collaborative editing, activity logs, and admin controls for airtight file governance.",
@@ -271,7 +271,7 @@
   },
   {
     "id": 16,
-    "image": "https://images.unsplash.com/photo-1512428559083-a40ce12044a5?q=80&w=1000&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop",
     "title": "SoundScape Pro",
     "companyName": "Aura Audio",
     "description": "SoundScape Pro is an advanced ambient audio environment for people who need the perfect sonic backdrop to focus, unwind, or fall asleep. Unlike basic white noise apps, SoundScape features a powerful layering system that lets you blend up to eight individual sounds simultaneously and fine-tune the volume of each one.\n\nChoose from over 300 studio-recorded audio sources spanning rain, forests, coffee shops, ocean waves, binaural beats, and more. All audio is captured in high-fidelity and plays back without any repetitive looping, creating a completely natural, immersive experience.\n\nSmart sleep timers, scheduled soundscape routines, and optional Pomodoro integration make SoundScape Pro a versatile productivity and wellness tool. Wear it with headphones for full spatial audio immersion, or cast it to a smart speaker to transform any room into your ideal sanctuary.",
@@ -343,7 +343,7 @@
   },
   {
     "id": 20,
-    "image": "https://images.unsplash.com/photo-1454165833767-02a6ed8a499b?q=80&w=1000&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1000&auto=format&fit=crop",
     "title": "ResumeBuild AI",
     "companyName": "CareerPath",
     "description": "ResumeBuild AI helps you craft a job-winning resume in minutes, not hours. Simply enter your work history and let the AI generate compelling, results-oriented bullet points tailored to your industry and target role. Instantly transform generic job duties into powerful achievement statements that grab recruiters' attention.\n\nChoose from over 50 professionally designed, ATS-optimized templates that ensure your resume gets past automated screening systems and into human hands. The built-in cover letter generator creates personalized letters for each application, pulling directly from your resume data for perfect consistency.\n\nA real-time resume score and keyword match checker tells you exactly how well your resume aligns with any job description, with actionable suggestions to improve it. ResumeBuild AI has helped thousands of job seekers land interviews at top companies worldwide.",

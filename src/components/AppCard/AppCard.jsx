@@ -1,4 +1,7 @@
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { LuDownload } from "react-icons/lu";
 import { Link } from "react-router";
+import { formatCount } from "../../utilities/utilities";
 const AppCard = ({ app }) => {
   const { id, title, image, ratingAvg, downloads } = app;
   return (
@@ -8,15 +11,34 @@ const AppCard = ({ app }) => {
           <img
             src={image}
             alt="Shoes"
-            className="rounded-xl h-50 w-full object-cover"
+            className="rounded-lg h-50 w-full object-cover"
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{title}</h2>
-          <div className="flex justify-between items-center">
-            <p>{downloads}</p>
-            <p>{ratingAvg}</p>
+          <h2 className="card-title mb-2">{title}</h2>
+
+          <div className="card-actions justify-between">
+            <div className="badge rounded-sm bg-gray-100 text-green-500 font-normal">
+              {/* <FaDownload /> */}
+              <LuDownload />
+              {formatCount(downloads)}
+            </div>
+            <div className="badge rounded-sm bg-gray-100 text-orange-400 font-normal">
+              {/* <FaStar /> */}
+              {ratingAvg == 5 || ratingAvg >= 4 ? (
+                <FaStar />
+              ) : ratingAvg >= 2 ? (
+                <FaStarHalfAlt />
+              ) : (
+                <FaRegStar />
+              )}
+              {ratingAvg}
+            </div>
           </div>
+          {/* <div className="flex justify-between items-center">
+            <p>{formatCount(downloads)}</p>
+            <p>{ratingAvg}</p>
+          </div> */}
         </div>
       </div>
     </Link>

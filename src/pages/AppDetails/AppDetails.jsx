@@ -29,9 +29,11 @@ const AppDetails = () => {
   return (
     <div className="max-w-7xl mx-auto my-15">
       <div className="flex items-stretch gap-10 border-b-1 border-b-gray-300 pb-8">
-        <div className="flex-1">
-          <img className="h-full object-cover" src={image} alt="" />
+        {/* Image */}
+        <div className="w-40 md:w-56 lg:w-64 shrink-0 aspect-square overflow-hidden rounded-md">
+          <img className="w-full h-full object-cover" src={image} alt="" />
         </div>
+
         <div className="flex-2">
           <h2 className="font-bold text-[32px]">{title}</h2>
           <p className="text-[20px] text-[#627382] border-b-1 border-b-gray-300 pb-3">

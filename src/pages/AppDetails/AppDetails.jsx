@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
@@ -10,6 +11,7 @@ const AppDetails = () => {
   const appData = useLoaderData();
   //   console.log(typeof Number(appId));
   //   console.log(appData);
+  const [isInstalled, setIsInstalled] = useState(false);
 
   const app = appData.find((app) => Number(app.id) === Number(appId));
   console.log(app);
@@ -69,9 +71,15 @@ const AppDetails = () => {
               </p>
             </div>
           </div>
-          <button className="btn btn-success text-white font-normal mt-6">
+
+          {/* Install Btn */}
+          <button
+            onClick={() => setIsInstalled(true)}
+            className="btn btn-success text-white font-normal mt-6"
+          >
             {" "}
-            {`Install Now (${size} MB)`}
+            {/* {`Install Now (${size} MB)`} */}
+            {isInstalled ? "Installed" : `Install Now (${size} MB)`}
           </button>
         </div>
       </div>

@@ -1,8 +1,6 @@
-import { useLoaderData } from "react-router";
 import AppCard from "../../components/AppCard/AppCard";
-const TopApps = () => {
-  const apps = useLoaderData();
-  //   console.log(apps);
+const TopApps = ({ apps }) => {
+  console.log(apps);
   return (
     <div className="max-w-7xl mx-auto my-[80px]">
       <div className="text-center">

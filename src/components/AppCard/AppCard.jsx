@@ -1,7 +1,8 @@
+import { Link } from "react-router";
 const AppCard = ({ app }) => {
   const { id, title, image, ratingAvg, downloads } = app;
   return (
-    <div>
+    <Link to={`/apps/${id}`}>
       <div className="card bg-base-100 w-76 shadow-lg">
         <figure className="px-4 pt-4">
           <img
@@ -18,7 +19,7 @@ const AppCard = ({ app }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

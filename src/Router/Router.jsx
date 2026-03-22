@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router";
+import AppDetails from "../pages/AppDetails/AppDetails";
 import Apps from "../pages/Apps/Apps";
 import Installation from "../pages/Installation/Installation";
 import NotFound from "../pages/NotFound/NotFound";
@@ -12,10 +13,15 @@ export const router = createBrowserRouter([
       {
         index: true,
         path: "/",
-        loader: () => fetch("eightApps.json"),
+        loader: () => fetch("allNewApps.json"),
         Component: Home,
       },
       { path: "/apps", Component: Apps },
+      {
+        path: "/apps/:appId",
+        loader: () => fetch("allNewApps.json"),
+        Component: AppDetails,
+      },
       { path: "/installation", Component: Installation },
       {
         path: "*",

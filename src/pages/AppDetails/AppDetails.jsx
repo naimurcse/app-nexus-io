@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingsIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
@@ -22,9 +23,11 @@ const AppDetails = () => {
     ratings,
     companyName,
   } = app;
+
+  console.log(ratings);
   return (
     <div className="max-w-7xl mx-auto my-15">
-      <div className="flex gap-10">
+      <div className="flex gap-10 border-b-1 border-b-gray-300 pb-8">
         <div>
           <img className="h-60" src={image} alt="" />
         </div>
@@ -65,9 +68,44 @@ const AppDetails = () => {
           </div>
         </div>
       </div>
-      <div>
-        <h2>Description</h2>
-        <p>{description}</p>
+
+      {/* Bar chart */}
+      <div className="border-b-1 border-b-gray-300 pb-8 mt-10">
+        <BarChart
+          layout="vertical"
+          style={{
+            width: "100%",
+            // maxWidth: "500px",
+            maxHeight: "35vh",
+            aspectRatio: 1.618,
+          }}
+          responsive
+          data={ratings}
+          margin={{
+            top: 5,
+            right: 0,
+            left: 0,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis type="number" />
+          <YAxis type="category" dataKey="name" width={70} />
+          <Bar
+            dataKey="count"
+            fill="#ff8811"
+            activeBar={{ fill: "#f07902" }}
+            radius={[0, 0, 0, 0]}
+          />
+        </BarChart>
+      </div>
+
+      {/* Description */}
+      <div className="mt-10 mb-20">
+        <h2 className="text-[24px] font-semibold mb-3">Description</h2>
+        <p className="text-[18px] text-[#627382] font-normal leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
   );

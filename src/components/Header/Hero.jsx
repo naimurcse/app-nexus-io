@@ -16,11 +16,11 @@ const Hero = () => {
           ideas into digital experiences that truly make an impact.
         </p>
         <div className="flex justify-center gap-5 my-[40px]">
-          <button className="btn btn-xl text-black border-[#e5e5e5]">
+          <button className="btn btn-xl app-web-btn bg-white rounded-lg text-black border-[#e5e5e5]">
             <img className="mr-1" src={googlePlay} alt="" />
             Google Play
           </button>
-          <button className="btn btn-xl text-black border-[#e5e5e5]">
+          <button className="app-web-btn btn btn-xl bg-white hover:bg-[#e5e5e5] rounded-lg text-black border-[#e5e5e5]">
             <img className="mr-1" src={appStore} alt="" />
             Apple Store
           </button>

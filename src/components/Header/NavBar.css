@@ -1,17 +1,6 @@
-.contribute-btn {
-  background: linear-gradient(
-    127deg,
-    rgba(99, 46, 227, 1) 0%,
-    rgba(159, 98, 242, 1) 100%
-  );
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
 a.active {
   color: #812ce2;
-  border-bottom: 3px solid #812ce2;
+  border-bottom: 2px solid #812ce2;
 }
 a.pending {
   color: blue;

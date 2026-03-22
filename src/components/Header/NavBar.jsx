@@ -1,4 +1,6 @@
-import { FaGithub } from "react-icons/fa";
+import { FaAppStore, FaGithub } from "react-icons/fa";
+import { HiOutlineHome } from "react-icons/hi2";
+import { MdInstallDesktop } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import logo from "../../assets/logo.png";
 import "./NavBar.css";
@@ -6,11 +8,15 @@ import "./NavBar.css";
 const NavBar = () => {
   const links = (
     <>
-      <NavLink className="" to="/">
-        Home
+      <NavLink className="flex items-center gap-1" to="/">
+        <HiOutlineHome className="text-lg" /> Home
       </NavLink>
-      <NavLink to="/apps">Apps</NavLink>
-      <NavLink to="/installation">Installation</NavLink>
+      <NavLink to="/apps" className="flex items-center gap-1">
+        <FaAppStore className="text-lg" /> Apps
+      </NavLink>
+      <NavLink to="/installation" className="flex items-center gap-1">
+        <MdInstallDesktop className="text-lg" /> Installation
+      </NavLink>
     </>
   );
   return (
@@ -53,12 +59,16 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-xl gap-5 [&_a]:hover:text-[#812ce2] ">
+            <ul className="menu menu-horizontal px-5 text-lg gap-10 [&_a]:hover:text-[#812ce2] ">
               {links}
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn contribute-btn">
+            <a
+              className="btn gradient-btn rounded-md text-white text-[16px] font-semibold"
+              href="https://github.com/naimurcse"
+              target="_blank"
+            >
               {" "}
               <FaGithub /> Contribute
             </a>

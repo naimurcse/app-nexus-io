@@ -7,8 +7,8 @@ const TopApps = ({ apps }) => {
   return (
     <div className="max-w-7xl mx-auto my-[80px]">
       <div className="text-center">
-        <h2 className="text-[48px] font-bold mb-2">Trending Apps</h2>
-        <p className="text-[#627382] text-xl mb-10">
+        <h2 className="text-[48px] font-bold mb-1">Trending Apps</h2>
+        <p className="text-[#627382] text-lg mb-10">
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
@@ -23,7 +23,7 @@ const TopApps = ({ apps }) => {
       {/* Show button */}
       <div className="text-center mt-10">
         <Link to="/apps">
-          <button className="gradient-btn px-8 py-3 rounded-lg text-lg ">
+          <button className="gradient-btn px-8 py-3 rounded-md text-white text-[20px] font-semibold">
             Show All
           </button>
         </Link>

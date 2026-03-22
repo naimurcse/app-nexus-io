@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { useLoaderData } from "react-router";
 import Hero from "../../components/Header/Hero";
 import Statistic from "../../components/Statistic/Statistic";
@@ -9,7 +10,12 @@ const Home = () => {
     <div className="">
       <Hero></Hero>
       <Statistic></Statistic>
-      <TopApps apps={apps}></TopApps>
+      <Suspense
+        className=""
+        fallback={<span className="loading loading-ring loading-xl"></span>}
+      >
+        <TopApps apps={apps}></TopApps>
+      </Suspense>
     </div>
   );
 };

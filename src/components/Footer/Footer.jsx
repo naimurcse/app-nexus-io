@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-[#001931]">
-        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-20 text-neutral-content pt-20 pb-10 border-b-1 border-b-cyan-950">
+        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-20 text-neutral-content pt-20 pb-10 border-b border-b-cyan-950">
           <div className="col-span-6">
             <h2 className="text-4xl font-light leading-12 mb-10">
               Discover Every App You Need, All in One Place.
@@ -15,7 +15,7 @@ const Footer = () => {
             {/* Logo */}
             <Link to="/" className="flex justify-start items-center pb-7">
               <img
-                className="w-[50px]"
+                className="w-12.5"
                 src={Logo}
                 alt="AppNexus.IO"
                 style={{
@@ -35,22 +35,22 @@ const Footer = () => {
             <div>
               <h3 className="footer-title">Social Media</h3>
               <ul className="flex gap-4">
-                <li className="border-1 border-[#632ee3] transition-all duration-400 hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
+                <li className="border border-[#632ee3] transition-all duration-400 hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
                   <a href="#">
                     <FaFacebookF />
                   </a>
                 </li>
-                <li className="border-1 border-[#632ee3]  transition-all duration-400  hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
+                <li className="border border-[#632ee3]  transition-all duration-400  hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
                   <a href="#">
                     <FaXTwitter />
                   </a>
                 </li>
-                <li className="border-1 border-[#632ee3]  transition-all duration-400  hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
+                <li className="border border-[#632ee3]  transition-all duration-400  hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
                   <a href="#">
                     <FaInstagram />
                   </a>
                 </li>
-                <li className="border-1 border-[#632ee3]  transition-all duration-400  hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
+                <li className="border border-[#632ee3]  transition-all duration-400  hover:bg-[#632ee3] p-3 rounded-4xl text-lg">
                   <a href="#">
                     <FaLinkedinIn />
                   </a>

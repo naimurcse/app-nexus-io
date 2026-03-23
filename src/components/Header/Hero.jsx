@@ -10,12 +10,12 @@ const Hero = () => {
         <h1 className="text-[#001931] font-bold text-6xl leading-[1.1]">
           We Build <br /> <span className="gradient-text">Productive</span> Apps
         </h1>
-        <p className="text-[#627382] max-w-5xl mx-auto my-6 text-xl leading-[1.5]">
+        <p className="text-[#627382] max-w-5xl mx-auto my-6 text-xl leading-normal">
           At AppNexus.IO, we craft innovative apps designed to make everyday
           life simpler, smarter, and more exciting. Our goal is to turn your
           ideas into digital experiences that truly make an impact.
         </p>
-        <div className="flex justify-center gap-5 my-[40px]">
+        <div className="flex justify-center gap-5 my-10">
           <button className="btn btn-xl app-web-btn bg-white rounded-lg text-black border-[#e5e5e5] hover:shadow-xl">
             <img className="mr-1" src={googlePlay} alt="" />
             Google Play

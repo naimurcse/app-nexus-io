@@ -3,7 +3,7 @@ import AppCard from "../../components/AppCard/AppCard";
 const Apps = () => {
   const apps = useLoaderData();
   return (
-    <div className="max-w-7xl mx-auto my-[60px]">
+    <div className="max-w-7xl mx-auto my-15">
       {/* Headings */}
       <div className="text-center">
         <h2 className="text-[48px] font-bold mb-1">Our All Applications</h2>

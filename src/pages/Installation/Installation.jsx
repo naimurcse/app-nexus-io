@@ -59,7 +59,7 @@ const Installation = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto mt-[60px] mb-[100px]">
+    <div className="max-w-7xl mx-auto mt-15 mb-25">
       {/* Headings */}
       <div className="text-center">
         <h2 className="text-[48px] font-bold mb-1">Your Installed Apps</h2>

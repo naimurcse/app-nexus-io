@@ -5,7 +5,7 @@ const TopApps = ({ apps }) => {
   console.log(apps);
   console.log(topEight);
   return (
-    <div className="max-w-7xl mx-auto my-[80px]">
+    <div className="max-w-7xl mx-auto my-20">
       <div className="text-center">
         <h2 className="text-[48px] font-bold mb-1">Trending Apps</h2>
         <p className="text-[#627382] text-lg mb-10">

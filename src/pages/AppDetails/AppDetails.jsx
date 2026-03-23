@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { toast } from "react-toastify";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingsIcon from "../../assets/icon-ratings.png";
@@ -13,6 +14,8 @@ const AppDetails = () => {
   //   console.log(typeof Number(appId));
   //   console.log(appData);
   const [isInstalled, setIsInstalled] = useState(false);
+  const success = () => toast.success("Successfully Installed.");
+  const warning = () => toast.warn("Already Installed.");
 
   const app = appData.find((app) => Number(app.id) === Number(appId));
   console.log(app);
@@ -35,6 +38,11 @@ const AppDetails = () => {
     console.log("Don't Press Me", id);
     setIsInstalled(true);
     addToStoreDB(id);
+    if (isInstalled) {
+      warning();
+    } else {
+      success();
+    }
   };
 
   return (

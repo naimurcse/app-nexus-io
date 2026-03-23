@@ -10,7 +10,7 @@ const getFromStoreDB = () => {
 const addToStoreDB = (id) => {
   const storedData = getFromStoreDB();
   if (storedData.includes(id)) {
-    alert("Already Exits!");
+    // alert("Already Exits!");
   } else {
     storedData.push(id);
     const data = JSON.stringify(storedData);

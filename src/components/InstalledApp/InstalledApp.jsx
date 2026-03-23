@@ -1,11 +1,14 @@
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { MdOutlineRateReview } from "react-icons/md";
+import { toast } from "react-toastify";
 import { formatCount } from "./../../utilities/utilities";
 
 const InstalledApp = ({ app }) => {
   // console.log(app);
   const { image, title, downloads, ratingAvg, size, reviews } = app;
+  const notify = () => toast("Successfully uninstalled.");
+
   return (
     <>
       <div className="flex justify-between items-center bg-white py-3 px-4 gap-3 shadow-md">
@@ -51,7 +54,10 @@ const InstalledApp = ({ app }) => {
 
         {/* Button */}
         <div>
-          <button className="btn btn-success text-white font-normal">
+          <button
+            onClick={notify}
+            className="btn btn-success text-white font-normal"
+          >
             Uninstall
           </button>
         </div>

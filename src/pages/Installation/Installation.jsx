@@ -1,13 +1,16 @@
 import { Suspense, useEffect, useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { useLoaderData } from "react-router";
 import { getFromStoreDB } from "../../utilities/addToDB";
 import InstalledApp from "./../../components/InstalledApp/InstalledApp";
 
 const Installation = () => {
   const allApps = useLoaderData();
-  console.log(allApps);
+  // console.log(allApps);
   const [installApps, setInstallApps] = useState([]);
+  const [sortType, setSortType] = useState("");
 
+  console.log(sortType);
   useEffect(() => {
     const appFromDB = getFromStoreDB();
     console.log(appFromDB);
@@ -18,8 +21,38 @@ const Installation = () => {
     );
     setInstallApps(installedApp);
   }, []);
-  console.log(installApps);
+  // console.log(installApps);
 
+  const handleSort = (type) => {
+    setSortType(type);
+
+    if (type === "review") {
+      const sortedByReview = [...installApps].sort(
+        (a, b) => b.reviews - a.reviews,
+      );
+      setInstallApps(sortedByReview);
+    }
+    if (type === "rating") {
+      const sortedByRating = [...installApps].sort(
+        (a, b) => b.ratingAvg - a.ratingAvg,
+      );
+      setInstallApps(sortedByRating);
+    }
+    if (type === "download") {
+      const sortedByDownload = [...installApps].sort(
+        (a, b) => b.downloads - a.downloads,
+      );
+      setInstallApps(sortedByDownload);
+    }
+    if (type === "size-ascending") {
+      const sortedBySizeAZ = [...installApps].sort((a, b) => a.size - b.size);
+      setInstallApps(sortedBySizeAZ);
+    }
+    if (type === "size-descending") {
+      const sortedBySizeZA = [...installApps].sort((a, b) => b.size - a.size);
+      setInstallApps(sortedBySizeZA);
+    }
+  };
   return (
     <div className="max-w-7xl mx-auto mt-[60px] mb-[100px]">
       {/* Headings */}
@@ -30,32 +63,49 @@ const Installation = () => {
         </p>
       </div>
 
-      {/* Sorts */}
       <div className="flex items-center justify-between mb-6">
         <div className="font-bold text-xl">
           ({installApps.length}) Apps Found
-          {/* (44) Apps Found */}
         </div>
+
+        {/* Sorts */}
         <div>
-          <label className="input bg-gray-100 w-100">
-            <svg
-              className="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+          <div className="dropdown dropdown-bottom dropdown-end">
+            <div tabIndex={0} role="button" className="btn m-1">
+              {sortType === "review"
+                ? "Sort By Review"
+                : sortType === "rating"
+                  ? "Sort By Rating"
+                  : sortType === "download"
+                    ? "Sort By Download"
+                    : sortType === "size-ascending"
+                      ? "Size (Low-High)"
+                      : sortType === "size-descending"
+                        ? "Size (High-Low)"
+                        : "Sort By"}
+              <IoMdArrowDropdown className="text-2xl" />
+            </div>
+            <ul
+              tabIndex="-1"
+              className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
-              <g
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </g>
-            </svg>
-            <input type="search" required placeholder="Search" />
-          </label>
+              <li onClick={() => handleSort("review")}>
+                <a>Review</a>
+              </li>
+              <li onClick={() => handleSort("rating")}>
+                <a>Rating</a>
+              </li>
+              <li onClick={() => handleSort("download")}>
+                <a>Download</a>
+              </li>
+              <li onClick={() => handleSort("size-ascending")}>
+                <a>Size (Low-High)</a>
+              </li>
+              <li onClick={() => handleSort("size-descending")}>
+                <a>Size (High-Low)</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

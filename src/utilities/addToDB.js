@@ -18,4 +18,10 @@ const addToStoreDB = (id) => {
   }
 };
 
-export { addToStoreDB, getFromStoreDB };
+const dataRemoveFromDB = (id) => {
+  const storedData = getFromStoreDB();
+  const updatedData = storedData.filter((item) => item !== id);
+  localStorage.setItem("installedApps", JSON.stringify(updatedData));
+};
+
+export { addToStoreDB, dataRemoveFromDB, getFromStoreDB };

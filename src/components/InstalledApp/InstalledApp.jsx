@@ -2,12 +2,17 @@ import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 import { MdOutlineRateReview } from "react-icons/md";
 import { toast } from "react-toastify";
+import { dataRemoveFromDB } from "../../utilities/addToDB";
 import { formatCount } from "./../../utilities/utilities";
 
-const InstalledApp = ({ app }) => {
-  // console.log(app);
-  const { image, title, downloads, ratingAvg, size, reviews } = app;
-  const notify = () => toast("Successfully uninstalled.");
+const InstalledApp = ({ app, onUninstall }) => {
+  const { id, image, title, downloads, ratingAvg, size, reviews } = app;
+
+  const handleUninstall = () => {
+    dataRemoveFromDB(id);
+    onUninstall(id);
+    toast("Successfully uninstalled.");
+  };
 
   return (
     <>
@@ -55,7 +60,7 @@ const InstalledApp = ({ app }) => {
         {/* Button */}
         <div>
           <button
-            onClick={notify}
+            onClick={handleUninstall}
             className="btn btn-success text-white font-normal"
           >
             Uninstall

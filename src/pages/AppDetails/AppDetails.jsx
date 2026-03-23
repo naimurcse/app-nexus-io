@@ -5,20 +5,18 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingsIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
-import { addToStoreDB } from "../../utilities/addToDB";
+import { addToStoreDB, getFromStoreDB } from "../../utilities/addToDB";
 import { formatCount } from "../../utilities/utilities";
 
 const AppDetails = () => {
   const { appId } = useParams();
   const appData = useLoaderData();
-  //   console.log(typeof Number(appId));
-  //   console.log(appData);
-  const [isInstalled, setIsInstalled] = useState(false);
+  // const [isInstalled, setIsInstalled] = useState(false);
+
   const success = () => toast.success("Successfully Installed.");
   const warning = () => toast.warn("Already Installed.");
 
   const app = appData.find((app) => Number(app.id) === Number(appId));
-  console.log(app);
   const {
     image,
     description,
@@ -32,16 +30,18 @@ const AppDetails = () => {
     id,
   } = app;
 
-  console.log(ratings);
+  const [isInstalled, setIsInstalled] = useState(() => {
+    const storedData = getFromStoreDB();
+    return storedData.includes(id);
+  });
 
   const handleInstalledApp = (id) => {
-    console.log("Don't Press Me", id);
-    setIsInstalled(true);
-    addToStoreDB(id);
     if (isInstalled) {
       warning();
     } else {
       success();
+      setIsInstalled(true);
+      addToStoreDB(id);
     }
   };
 
@@ -92,7 +92,7 @@ const AppDetails = () => {
           {/* Install Btn */}
           <button
             onClick={() => handleInstalledApp(id)}
-            className="btn btn-success text-white font-normal mt-6"
+            className={`btn ${isInstalled ? "bg-gray-300 rounded-md text-black" : "btn-success text-white"}  font-normal mt-6`}
           >
             {" "}
             {/* {`Install Now (${size} MB)`} */}

@@ -53,6 +53,11 @@ const Installation = () => {
       setInstallApps(sortedBySizeZA);
     }
   };
+
+  const handleUninstall = (id) => {
+    setInstallApps((prev) => prev.filter((app) => app.id !== id));
+  };
+
   return (
     <div className="max-w-7xl mx-auto mt-[60px] mb-[100px]">
       {/* Headings */}
@@ -114,7 +119,11 @@ const Installation = () => {
         {
           <Suspense fallback={<span>Loading....</span>}>
             {installApps.map((app) => (
-              <InstalledApp key={app.id} app={app}></InstalledApp>
+              <InstalledApp
+                key={app.id}
+                app={app}
+                onUninstall={handleUninstall}
+              ></InstalledApp>
             ))}
           </Suspense>
         }

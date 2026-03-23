@@ -18,4 +18,4 @@ const addToStoreDB = (id) => {
   }
 };
 
-export { addToStoreDB };
+export { addToStoreDB, getFromStoreDB };

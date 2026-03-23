@@ -4,6 +4,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingsIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
+import { addToStoreDB } from "../../utilities/addToDB";
 import { formatCount } from "../../utilities/utilities";
 
 const AppDetails = () => {
@@ -25,9 +26,17 @@ const AppDetails = () => {
     ratings,
     size,
     companyName,
+    id,
   } = app;
 
   console.log(ratings);
+
+  const handleInstalledApp = (id) => {
+    console.log("Don't Press Me", id);
+    setIsInstalled(true);
+    addToStoreDB(id);
+  };
+
   return (
     <div className="max-w-7xl mx-auto my-15">
       <div className="flex items-stretch gap-10 border-b-1 border-b-gray-300 pb-8">
@@ -74,7 +83,7 @@ const AppDetails = () => {
 
           {/* Install Btn */}
           <button
-            onClick={() => setIsInstalled(true)}
+            onClick={() => handleInstalledApp(id)}
             className="btn btn-success text-white font-normal mt-6"
           >
             {" "}

@@ -1,6 +1,7 @@
+import { formatCount } from "./../../utilities/utilities";
 import "./Statistic.css";
 
-const Statistic = () => {
+const Statistic = ({ totalReview, totalDownload }) => {
   return (
     <>
       <div className="statistic-section py-[80px]">
@@ -11,12 +12,16 @@ const Statistic = () => {
           <div className="grid grid-cols-3 ">
             <div>
               <p>Total Downloads</p>
-              <p className="text-[64px] font-extrabold my-[10px]">29.6M</p>
+              <p className="text-[64px] font-extrabold my-[10px]">
+                {formatCount(totalDownload)}
+              </p>
               <p>21% more than last month</p>
             </div>
             <div>
               <p>Total Review</p>
-              <p className="text-[64px] font-extrabold my-[10px]">906K</p>
+              <p className="text-[64px] font-extrabold my-[10px]">
+                {formatCount(totalReview)}
+              </p>
               <p>46% more than last month</p>
             </div>
             <div>

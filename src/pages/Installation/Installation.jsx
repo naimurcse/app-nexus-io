@@ -21,7 +21,7 @@ const Installation = () => {
   console.log(installApps);
 
   return (
-    <div className="max-w-7xl mx-auto my-[60px]">
+    <div className="max-w-7xl mx-auto mt-[60px] mb-[100px]">
       {/* Headings */}
       <div className="text-center">
         <h2 className="text-[48px] font-bold mb-1">Your Installed Apps</h2>

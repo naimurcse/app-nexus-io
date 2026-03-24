@@ -3,15 +3,22 @@ import { useLoaderData, useNavigation } from "react-router";
 import AppCard from "../../components/AppCard/AppCard";
 import SearchNotFound from "../../components/SearchNotFound/SearchNotFound";
 import AppNotFound from "../AppNotFound/AppNotFound";
+
 const Apps = () => {
   const apps = useLoaderData();
   const [search, setSearch] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
   const navigation = useNavigation();
   const isNavigating = Boolean(navigation.location);
 
   const handleSearchOnChange = (e) => {
-    console.log(e.target.value);
-    setSearch(e.target.value);
+    setIsSearching(true);
+    const value = e.target.value;
+
+    setTimeout(() => {
+      setSearch(value);
+      setIsSearching(false);
+    }, 400);
   };
 
   const filteredApps = apps.filter((app) =>
@@ -64,19 +71,24 @@ const Apps = () => {
         </div>
       </div>
 
-      {filteredApps.length === 0 && !isNavigating && (
-        <AppNotFound Message={<SearchNotFound />}></AppNotFound>
-      )}
-      {isNavigating && (
-        <div className=" flex justify-center">
-          <span className="loading loading-ring loading-xl w-25"></span>
+      {/* Loading States */}
+
+      {isNavigating || isSearching ? (
+        <div className="flex justify-center items-center py-20">
+          <span className="loading loading-spinner loading-lg text-primary"></span>
         </div>
+      ) : (
+        <>
+          {filteredApps.length === 0 && (
+            <AppNotFound Message={<SearchNotFound />}></AppNotFound>
+          )}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-3 lg:gap-8 xl:gap-4">
+            {filteredApps.map((app) => (
+              <AppCard key={app.id} app={app} />
+            ))}
+          </div>
+        </>
       )}
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-3 lg:gap-8 xl:gap-4">
-        {filteredApps.map((app) => (
-          <AppCard key={app.id} app={app}></AppCard>
-        ))}
-      </div>
     </div>
   );
 };

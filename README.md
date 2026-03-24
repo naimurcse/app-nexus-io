@@ -133,11 +133,3 @@ The platform features **28 apps** across diverse categories:
 | App Details  | `/apps/:id`     | Stats, rating chart, install button |
 | Installation | `/installation` | Manage installed apps with sorting  |
 | Not Found    | `*`             | Custom 404 page                     |
-
----
-
-## 📞 Contact
-
-- 📍 **Location:** Mirpur, Dhaka, Bangladesh-1216
-- 📧 **Email:** app-nexus-io@gmail.com
-- 📞 **Phone:** +990235189

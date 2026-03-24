@@ -6,10 +6,12 @@ const AppNotFound = ({ Message }) => {
   return (
     <div className="max-w-7xl mx-auto flex text-center justify-center py-4">
       <div>
+        {/* Image */}
         <img className="w-50 md:w-87.5 mx-auto" src={notFoundImage} alt="" />
 
         {Message}
 
+        {/* Button */}
         <button
           className="btn gradient-btn text-md md:text-xl md:btn-lg text-white"
           onClick={() => navigate(-1)}

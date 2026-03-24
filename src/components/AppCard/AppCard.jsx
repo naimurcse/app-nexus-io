@@ -7,6 +7,7 @@ const AppCard = ({ app }) => {
   return (
     <Link to={`/apps/${id}`}>
       <div className="card bg-base-100 xl:w-76 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-400">
+        {/* Image */}
         <figure className="px-4 pt-4">
           <img
             src={image}
@@ -14,17 +15,20 @@ const AppCard = ({ app }) => {
             className="rounded-lg h-50 w-full object-cover"
           />
         </figure>
+
+        {/* Card Body */}
         <div className="card-body">
           <h2 className="card-title mb-2">{title}</h2>
 
           <div className="card-actions justify-between">
+            {/* Downloads */}
             <div className="badge rounded-sm bg-gray-100 text-green-500 font-normal">
-              {/* <FaDownload /> */}
               <LuDownload />
               {formatCount(downloads)}
             </div>
+
+            {/* Ratings */}
             <div className="badge rounded-sm bg-gray-100 text-orange-400 font-normal">
-              {/* <FaStar /> */}
               {ratingAvg == 5 || ratingAvg >= 4 ? (
                 <FaStar />
               ) : ratingAvg >= 2 ? (
@@ -35,10 +39,6 @@ const AppCard = ({ app }) => {
               {ratingAvg}
             </div>
           </div>
-          {/* <div className="flex justify-between items-center">
-            <p>{formatCount(downloads)}</p>
-            <p>{ratingAvg}</p>
-          </div> */}
         </div>
       </div>
     </Link>

@@ -2,10 +2,9 @@ import { Link } from "react-router";
 import AppCard from "../../components/AppCard/AppCard";
 const TopApps = ({ apps }) => {
   const topEight = apps.slice(0, 8);
-  console.log(apps);
-  console.log(topEight);
   return (
     <div className="max-w-100 px-4 md:px-0 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto my-20">
+      {/* Headings */}
       <div className="text-center">
         <h2 className="text-[34px] lg:text-[48px] font-bold mb-1">
           Trending Apps

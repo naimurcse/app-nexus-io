@@ -10,6 +10,7 @@ const Statistic = ({ totalReview, totalDownload }) => {
             Trusted by Millions, Built for You
           </h2>
           <div className="grid gap-20 xl:gap-10 lg:grid-cols-2 xl:grid-cols-3">
+            {/* Total Download */}
             <div className="lg:col-span-2 xl:col-span-1">
               <p>Total Downloads</p>
               <p className="text-[64px] font-extrabold xl:my-2.5">
@@ -17,6 +18,8 @@ const Statistic = ({ totalReview, totalDownload }) => {
               </p>
               <p>21% more than last month</p>
             </div>
+
+            {/* Total Review */}
             <div className="">
               <p>Total Review</p>
               <p className="text-[64px] font-extrabold xl:my-2.5">
@@ -24,6 +27,8 @@ const Statistic = ({ totalReview, totalDownload }) => {
               </p>
               <p>46% more than last month</p>
             </div>
+
+            {/* Active Apps */}
             <div className="">
               <p>Active Apps</p>
               <p className="text-[64px] font-extrabold xl:my-2.5">132+</p>

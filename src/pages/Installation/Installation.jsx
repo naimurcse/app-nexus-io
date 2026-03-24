@@ -8,26 +8,21 @@ import InstalledApp from "./../../components/InstalledApp/InstalledApp";
 
 const Installation = () => {
   const allApps = useLoaderData();
-  // console.log(allApps);
   const [installApps, setInstallApps] = useState([]);
   const [sortType, setSortType] = useState("");
   const [loading, setLoading] = useState(true);
   const navigation = useNavigation();
   let isNavigating = Boolean(navigation.location);
 
-  console.log(sortType);
   useEffect(() => {
     const appFromDB = getFromStoreDB();
-    console.log(appFromDB);
     const convertedNumberData = appFromDB.map((app) => Number(app));
-    console.log(convertedNumberData);
     const installedApp = allApps.filter((app) =>
       convertedNumberData.includes(app.id),
     );
     setInstallApps(installedApp);
     setLoading(false);
   }, []);
-  // console.log(installApps);
 
   const handleSort = (type) => {
     setSortType(type);

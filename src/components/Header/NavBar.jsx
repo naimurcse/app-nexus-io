@@ -23,6 +23,7 @@ const NavBar = () => {
     <>
       <div className=" bg-base-100 shadow-sm">
         <div className="navbar  lg:max-w-4xl xl:max-w-7xl mx-auto">
+          {/* Logo */}
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -61,11 +62,15 @@ const NavBar = () => {
               AppNexus.IO
             </Link>
           </div>
+
+          {/* Menu */}
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-5 text-lg gap-10 [&_a]:hover:text-[#812ce2] ">
               {links}
             </ul>
           </div>
+
+          {/* Contribute Btn */}
           <div className="navbar-end">
             <a
               className="btn gradient-btn rounded-md text-white text-[16px] font-semibold"

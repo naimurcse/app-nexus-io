@@ -6,6 +6,7 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <div className="max-w-100 px-4 md:px-0 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
+      {/* Title and Sub-title */}
       <div className="text-center mt-10 lg:mt-20">
         <h1 className="text-[#001931] font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1]">
           We Build <br /> <span className="gradient-text">Productive</span> Apps
@@ -18,6 +19,7 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row justify-center gap-5 my-10">
+          {/* Google Play Btn */}
           <a
             href="https://play.google.com"
             target="_blank"
@@ -28,7 +30,7 @@ const Hero = () => {
               Google Play
             </button>
           </a>
-
+          {/* Apple Btn */}
           <a href="https://apps.apple.com" target="_blank" rel="noreferrer">
             <button className="app-web-btn btn btn-xl bg-white hover:bg-[#e5e5e5] md:rounded-lg text-black border-[#e5e5e5]  hover:shadow-xl">
               <img className="mr-1" src={appStore} alt="" />
@@ -37,6 +39,8 @@ const Hero = () => {
           </a>
         </div>
       </div>
+
+      {/* Hero Image */}
       <div>
         <img
           className="mx-auto md:w-xl lg:w-2xl xl:w-4xl"

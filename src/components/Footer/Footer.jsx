@@ -2,6 +2,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
 import Logo from "../../assets/logo.png";
+
 const Footer = () => {
   return (
     <>
@@ -34,10 +35,13 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-6  xl:col-span-3 flex flex-col justify-between ">
+            {/* Location */}
             <div className="mb-10 lg:mb-0">
               <h3 className="footer-title">Location</h3>
               <address>Mirpur, Dhaka, Bangladesh-1216</address>
             </div>
+
+            {/* Social Media */}
             <div className="mb-10 lg:mb-0">
               <h3 className="footer-title mb-4">Social Media</h3>
               <ul className="flex justify-center lg:justify-start gap-4">
@@ -65,12 +69,15 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Contact */}
           <div className="lg:col-span-6  xl:col-span-3 flex flex-col justify-between xl:text-end">
             <div className="mb-8">
               <h3 className="footer-title">Contact</h3>
               <p>Phone: +990235189</p>
               <p>Email: app-nexus-io@gmail.com</p>
             </div>
+
+            {/* Helpful Links */}
             <div>
               <h3 className="footer-title">Helpful Links</h3>
               <ul>

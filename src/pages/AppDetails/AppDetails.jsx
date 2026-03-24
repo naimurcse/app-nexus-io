@@ -20,8 +20,6 @@ import { formatCount } from "../../utilities/utilities";
 const AppDetails = () => {
   const { appId } = useParams();
   const appData = useLoaderData();
-  // const [isInstalled, setIsInstalled] = useState(false);
-
   const success = () => toast.success("Successfully Installed.");
   const warning = () => toast.warn("Already Installed.");
 

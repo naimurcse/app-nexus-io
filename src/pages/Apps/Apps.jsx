@@ -42,7 +42,7 @@ const Apps = () => {
           ({filteredApps.length}) Apps Found
         </div>
 
-        {/* Search */}
+        {/* Search Bar*/}
         <div>
           <label className="input bg-gray-100 xl:w-100">
             <svg

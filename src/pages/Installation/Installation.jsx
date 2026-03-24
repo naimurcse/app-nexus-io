@@ -1,6 +1,6 @@
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigation } from "react-router";
 import PleaseInstall from "../../components/PleaseInstall/PleaseInstall";
 import { getFromStoreDB } from "../../utilities/addToDB";
 import AppNotFound from "../AppNotFound/AppNotFound";
@@ -11,6 +11,9 @@ const Installation = () => {
   // console.log(allApps);
   const [installApps, setInstallApps] = useState([]);
   const [sortType, setSortType] = useState("");
+  const [loading, setLoading] = useState(true);
+  const navigation = useNavigation();
+  let isNavigating = Boolean(navigation.location);
 
   console.log(sortType);
   useEffect(() => {
@@ -22,6 +25,7 @@ const Installation = () => {
       convertedNumberData.includes(app.id),
     );
     setInstallApps(installedApp);
+    setLoading(false);
   }, []);
   // console.log(installApps);
 
@@ -40,11 +44,17 @@ const Installation = () => {
       );
       setInstallApps(sortedByRating);
     }
-    if (type === "download") {
-      const sortedByDownload = [...installApps].sort(
+    if (type === "download-ascending") {
+      const sortedByDownloadAZ = [...installApps].sort(
+        (a, b) => a.downloads - b.downloads,
+      );
+      setInstallApps(sortedByDownloadAZ);
+    }
+    if (type === "download-descending") {
+      const sortedByDownloadZA = [...installApps].sort(
         (a, b) => b.downloads - a.downloads,
       );
-      setInstallApps(sortedByDownload);
+      setInstallApps(sortedByDownloadZA);
     }
     if (type === "size-ascending") {
       const sortedBySizeAZ = [...installApps].sort((a, b) => a.size - b.size);
@@ -55,7 +65,6 @@ const Installation = () => {
       setInstallApps(sortedBySizeZA);
     }
   };
-
   const handleUninstall = (id) => {
     setInstallApps((prev) => prev.filter((app) => app.id !== id));
   };
@@ -85,13 +94,15 @@ const Installation = () => {
                 ? "Sort By Review"
                 : sortType === "rating"
                   ? "Sort By Rating"
-                  : sortType === "download"
-                    ? "Sort By Download"
-                    : sortType === "size-ascending"
-                      ? "Size (Low-High)"
-                      : sortType === "size-descending"
-                        ? "Size (High-Low)"
-                        : "Sort By"}
+                  : sortType === "download-ascending"
+                    ? "Download (Low-High)"
+                    : sortType === "download-descending"
+                      ? "Download (High-Low)"
+                      : sortType === "size-ascending"
+                        ? "Size (Low-High)"
+                        : sortType === "size-descending"
+                          ? "Size (High-Low)"
+                          : "Sort By"}
               <IoMdArrowDropdown className="text-2xl" />
             </div>
             <ul
@@ -104,8 +115,11 @@ const Installation = () => {
               <li onClick={() => handleSort("rating")}>
                 <a>Rating</a>
               </li>
-              <li onClick={() => handleSort("download")}>
-                <a>Download</a>
+              <li onClick={() => handleSort("download-ascending")}>
+                <a>Download (Low-High)</a>
+              </li>
+              <li onClick={() => handleSort("download-descending")}>
+                <a>Download (High-Low)</a>
               </li>
               <li onClick={() => handleSort("size-ascending")}>
                 <a>Size (Low-High)</a>
@@ -118,23 +132,19 @@ const Installation = () => {
         </div>
       </div>
 
-      {installApps.length == 0 && (
-        <AppNotFound Message={<PleaseInstall />}></AppNotFound>
-      )}
       {/* Installed App */}
       <div className="grid grid-cols-1 gap-4">
-        {
-          <Suspense fallback={<span>Loading....</span>}>
-            {installApps.map((app) => (
-              <InstalledApp
-                key={app.id}
-                app={app}
-                onUninstall={handleUninstall}
-              ></InstalledApp>
-            ))}
-          </Suspense>
-        }
+        {installApps.map((app) => (
+          <InstalledApp
+            key={app.id}
+            app={app}
+            onUninstall={handleUninstall}
+          ></InstalledApp>
+        ))}
       </div>
+      {installApps.length == 0 && !isNavigating && !loading && (
+        <AppNotFound Message={<PleaseInstall />}></AppNotFound>
+      )}
     </div>
   );
 };

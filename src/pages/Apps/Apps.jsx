@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigation } from "react-router";
 import AppCard from "../../components/AppCard/AppCard";
 import SearchNotFound from "../../components/SearchNotFound/SearchNotFound";
 import AppNotFound from "../AppNotFound/AppNotFound";
 const Apps = () => {
   const apps = useLoaderData();
   const [search, setSearch] = useState("");
+  const navigation = useNavigation();
+  const isNavigating = Boolean(navigation.location);
 
   const handleSearchOnChange = (e) => {
     console.log(e.target.value);
@@ -62,8 +64,13 @@ const Apps = () => {
         </div>
       </div>
 
-      {filteredApps.length === 0 && (
+      {filteredApps.length === 0 && !isNavigating && (
         <AppNotFound Message={<SearchNotFound />}></AppNotFound>
+      )}
+      {isNavigating && (
+        <div className=" flex justify-center">
+          <span className="loading loading-ring loading-xl w-25"></span>
+        </div>
       )}
       <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-3 lg:gap-8 xl:gap-4">
         {filteredApps.map((app) => (

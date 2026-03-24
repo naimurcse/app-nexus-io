@@ -18,14 +18,23 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row justify-center gap-5 my-10">
-          <button className="btn btn-xl app-web-btn bg-white md:rounded-lg text-black border-[#e5e5e5] hover:shadow-xl">
-            <img className="mr-1" src={googlePlay} alt="" />
-            Google Play
-          </button>
-          <button className="app-web-btn btn btn-xl bg-white hover:bg-[#e5e5e5] md:rounded-lg text-black border-[#e5e5e5]  hover:shadow-xl">
-            <img className="mr-1" src={appStore} alt="" />
-            Apple Store
-          </button>
+          <a
+            href="https://play.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="btn btn-xl app-web-btn bg-white md:rounded-lg text-black border-[#e5e5e5] hover:shadow-xl">
+              <img className="mr-1" src={googlePlay} alt="" />
+              Google Play
+            </button>
+          </a>
+
+          <a href="https://apps.apple.com" target="_blank" rel="noreferrer">
+            <button className="app-web-btn btn btn-xl bg-white hover:bg-[#e5e5e5] md:rounded-lg text-black border-[#e5e5e5]  hover:shadow-xl">
+              <img className="mr-1" src={appStore} alt="" />
+              Apple Store
+            </button>
+          </a>
         </div>
       </div>
       <div>

@@ -22,7 +22,7 @@ const NavBar = () => {
   return (
     <>
       <div className=" bg-base-100 shadow-sm">
-        <div className="navbar max-w-7xl mx-auto">
+        <div className="navbar  lg:max-w-4xl xl:max-w-7xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -48,12 +48,15 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-2 underline-offset-0"
               >
                 {links}
               </ul>
             </div>
-            <Link to="/" className="btn btn-ghost text-xl">
+            <Link
+              to="/"
+              className="btn px-0 lg:px-2 btn-ghost text-lg lg:text-xl"
+            >
               <img className="w-6" src={logo} alt="" />
               AppNexus.IO
             </Link>
@@ -70,7 +73,7 @@ const NavBar = () => {
               target="_blank"
             >
               {" "}
-              <FaGithub /> Contribute
+              <FaGithub /> <span className="hidden md:block">Contribute</span>
             </a>
           </div>
         </div>

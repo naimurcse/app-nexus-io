@@ -16,17 +16,26 @@ const InstalledApp = ({ app, onUninstall }) => {
 
   return (
     <>
-      <div className="flex justify-between items-center bg-white py-3 px-4 gap-3 shadow-md">
-        <div>
-          <div className="flex gap-3">
-            {/* Image */}
-            <div className="w-40 md:w-56 lg:w-20 shrink-0 aspect-square overflow-hidden rounded-md">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center bg-white py-3 px-4 gap-3 shadow-md">
+        <div className=" md:text-start md:mx-0">
+          <div className="flex flex-row gap-3">
+            {/* Image hidden md:block*/}
+            <div className="hidden md:block  md:w-20 shrink-0 aspect-square overflow-hidden rounded-md">
               <img className="w-full h-full object-cover" src={image} alt="" />
             </div>
 
             {/* Info */}
             <div className="py-2 flex flex-col justify-between">
-              <h3 className="text-[20px] font-semibold"> {title}</h3>
+              <h3 className="text-[20px] font-semibold mb-2 md:mb-0 flex gap-2 items-center leading-5.5">
+                <div className="w-10  rounded-4xl md:hidden shrink-0 aspect-square overflow-hidden">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={image}
+                    alt=""
+                  />
+                </div>{" "}
+                {title}
+              </h3>
               <div className="flex gap-5 text-[16px] font-normal">
                 <div className="flex items-center gap-1 text-green-500 font-normal">
                   {/* <FaDownload /> */}
@@ -47,7 +56,7 @@ const InstalledApp = ({ app, onUninstall }) => {
 
                 <p className="text-[#627382]">{size} MB</p>
 
-                <div className="flex items-center gap-1 text-[#632ee3] font-normal">
+                <div className="md:flex hidden items-center gap-1 text-[#632ee3] font-normal">
                   {/* <FaDownload /> */}
                   <MdOutlineRateReview />
                   {formatCount(reviews)}
@@ -58,7 +67,7 @@ const InstalledApp = ({ app, onUninstall }) => {
         </div>
 
         {/* Button */}
-        <div>
+        <div className="text-center md:text-start">
           <button
             onClick={handleUninstall}
             className="btn btn-success text-white font-normal"

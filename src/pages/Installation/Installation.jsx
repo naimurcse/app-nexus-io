@@ -59,17 +59,19 @@ const Installation = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto mt-15 mb-25">
+    <div className="max-w-100 px-4 md:px-0 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto mt-10 lg:mt-15 mb-15 lg:mb-25">
       {/* Headings */}
       <div className="text-center">
-        <h2 className="text-[48px] font-bold mb-1">Your Installed Apps</h2>
-        <p className="text-[#627382] text-lg mb-14">
+        <h2 className="text-[24px] md:text-[28px] lg:text-[48px] font-bold mb-1">
+          Your Installed Apps
+        </h2>
+        <p className="text-[#627382] text-md lg:text-lg mb-8 lg:mb-14">
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
 
-      <div className="flex items-center justify-between mb-6">
-        <div className="font-bold text-xl">
+      <div className="flex flex-col-reverse gap-5 lg:flex-row items-center justify-center md:justify-between mb-6">
+        <div className="font-semibold md:font-bold text-lg lg:text-xl">
           ({installApps.length}) Apps Found
         </div>
 

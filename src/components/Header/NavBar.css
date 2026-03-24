@@ -1,6 +1,6 @@
 a.active {
   color: #812ce2;
-  border-bottom: 2px solid #812ce2;
+  /* border-bottom: 2px solid #812ce2; */
 }
 a.pending {
   color: blue;

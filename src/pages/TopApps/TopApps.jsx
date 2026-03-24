@@ -5,16 +5,18 @@ const TopApps = ({ apps }) => {
   console.log(apps);
   console.log(topEight);
   return (
-    <div className="max-w-7xl mx-auto my-20">
+    <div className="max-w-100 px-4 md:px-0 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto my-20">
       <div className="text-center">
-        <h2 className="text-[48px] font-bold mb-1">Trending Apps</h2>
-        <p className="text-[#627382] text-lg mb-10">
+        <h2 className="text-[34px] lg:text-[48px] font-bold mb-1">
+          Trending Apps
+        </h2>
+        <p className="text-[#627382] text-md lg:text-lg mb-10">
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
 
       {/* Apps will be shown here */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-3 lg:gap-8 xl:gap-4">
         {topEight.map((app) => (
           <AppCard key={app.id} app={app}></AppCard>
         ))}

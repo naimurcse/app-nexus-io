@@ -1,7 +1,9 @@
 import { Suspense, useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useLoaderData } from "react-router";
+import PleaseInstall from "../../components/PleaseInstall/PleaseInstall";
 import { getFromStoreDB } from "../../utilities/addToDB";
+import AppNotFound from "../AppNotFound/AppNotFound";
 import InstalledApp from "./../../components/InstalledApp/InstalledApp";
 
 const Installation = () => {
@@ -116,6 +118,9 @@ const Installation = () => {
         </div>
       </div>
 
+      {installApps.length == 0 && (
+        <AppNotFound Message={<PleaseInstall />}></AppNotFound>
+      )}
       {/* Installed App */}
       <div className="grid grid-cols-1 gap-4">
         {

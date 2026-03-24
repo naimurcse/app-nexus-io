@@ -1,7 +1,16 @@
+import { RechartsDevtools } from "@recharts/devtools";
 import { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { toast } from "react-toastify";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingsIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
@@ -148,12 +157,16 @@ const AppDetails = () => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number" />
           <YAxis type="category" dataKey="name" width={70} />
+
           <Bar
             dataKey="count"
             fill="#ff8811"
             activeBar={{ fill: "#f07902" }}
             radius={[0, 0, 0, 0]}
           />
+          <Tooltip />
+          <Legend />
+          <RechartsDevtools />
         </BarChart>
       </div>
 
@@ -162,9 +175,14 @@ const AppDetails = () => {
         <h2 className="text-xl md:text-[24px] font-semibold mb-3">
           Description
         </h2>
-        <p className="text-md md:text-[18px] text-[#627382] font-normal leading-relaxed">
-          {description}
-        </p>
+        {description.split("\n\n").map((para, index) => (
+          <p
+            key={index}
+            className="text-md md:text-[18px] text-[#627382] font-normal leading-relaxed mb-4"
+          >
+            {para}
+          </p>
+        ))}
       </div>
     </div>
   );

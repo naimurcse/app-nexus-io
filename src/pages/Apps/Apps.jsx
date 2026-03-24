@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router";
 import AppCard from "../../components/AppCard/AppCard";
+import SearchNotFound from "../../components/SearchNotFound/SearchNotFound";
+import AppNotFound from "../AppNotFound/AppNotFound";
 const Apps = () => {
   const apps = useLoaderData();
   const [search, setSearch] = useState("");
@@ -60,6 +62,9 @@ const Apps = () => {
         </div>
       </div>
 
+      {filteredApps.length === 0 && (
+        <AppNotFound Message={<SearchNotFound />}></AppNotFound>
+      )}
       <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-3 lg:gap-8 xl:gap-4">
         {filteredApps.map((app) => (
           <AppCard key={app.id} app={app}></AppCard>
